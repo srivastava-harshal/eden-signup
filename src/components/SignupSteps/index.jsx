@@ -29,19 +29,6 @@ const steps = [
   },
 ];
 
-const checkDisabled = (formData) => {
-  const { userName, userDisplayName, workspaceName, workspaceURL, plan } =
-    formData;
-  switch (activeStep) {
-    case 1:
-      return !workspaceName && !workspaceURL;
-    case 2:
-      return !plan;
-    default:
-      return !userName && !userDisplayName;
-  }
-};
-
 const SignupSteps = () => {
   const [activeStep, setActiveStep] = useState(0);
 
@@ -57,6 +44,19 @@ const SignupSteps = () => {
 
   const handleChange = (key, value) => {
     setFormData({ ...formData, [key]: value });
+  };
+
+  const checkDisabled = () => {
+    const { userName, userDisplayName, workspaceName, workspaceURL, plan } =
+      formData;
+    switch (activeStep) {
+      case 1:
+        return !workspaceName && !workspaceURL;
+      case 2:
+        return !plan;
+      default:
+        return !userName && !userDisplayName;
+    }
   };
 
   return (
@@ -80,9 +80,9 @@ const SignupSteps = () => {
         <Component formData={formData} handleChange={handleChange} />
         <button
           className="signup-button"
-          disabled={checkDisabled(formData)}
+          disabled={checkDisabled()}
           style={{
-            cursor: checkDisabled(formData) ? "not-allowed" : "pointer",
+            cursor: checkDisabled() ? "not-allowed" : "pointer",
           }}
           onClick={() => setActiveStep((activeStep + 1) % steps.length)}
         >
