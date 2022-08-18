@@ -139,20 +139,17 @@ label {
   justify-content: center;
 }
 
-.StepButton-0-2-4 {
+#RFS-StepButton {
   border: 0.5px solid #c5c5c5 !important;
+  z-index: 10;
 }
 
 .stepper {
   width: 50%;
 }
 
-.ConnectorContainer-0-2-14 {
+#RFS-ConnectorContainer {
   top: calc((2em - 1px) / 2);
   left: calc((-50% + 1em) - 8px) !important;
   right: calc((50% + 1em) - 8px) !important;
-}
-
-.StepMain-0-2-3 button {
-  z-index: 10;
 }
