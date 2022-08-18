@@ -2,13 +2,15 @@ import React from "react";
 
 const Final = () => {
   return (
-    <div>
-      <h1>Congratulations, Eren!</h1>
-      <p>You have completed onboarding, you can start using the Eden!</p>
-      <div>
-        <button>Launch Eden</button>
+    <>
+      <div className="final-check">
+        <img src="src/icons/check.png" />
       </div>
-    </div>
+      <h1 className="signup-heading">Congratulations, Eren!</h1>
+      <p className="signup-subtitle">
+        You have completed onboarding, you can start using the Eden!
+      </p>
+    </>
   );
 };
 

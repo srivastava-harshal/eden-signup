@@ -1,22 +1,31 @@
 import React from "react";
 
-const Workspace = () => {
+const Workspace = ({ formData, handleChange }) => {
   return (
-    <div>
-      <h1>How are you planning to use Eden?</h1>
-      <p>We'll streamline your setup experience accordingly</p>
-      <div>
-        <h4>For Myself</h4>
-        <p>Write better. Think more clearly. Stay organized.</p>
+    <>
+      <p className="signup-heading">Let's set up a home for your work</p>
+      <p className="signup-subtitle">
+        You can always create another workspace later.
+      </p>
+      <div className="step-wrapper">
+        <div className="form-item">
+          <label>Workspace Name</label>
+          <input
+            placeholder="Eden"
+            value={formData.workspaceName}
+            onChange={(e) => handleChange("workspaceName", e.target.value)}
+          />
+        </div>
+        <div className="form-item">
+          <label>Workspace URL</label>
+          <input
+            placeholder="www.eden.com"
+            value={formData.workspaceURL}
+            onChange={(e) => handleChange("workspaceURL", e.target.value)}
+          />
+        </div>
       </div>
-      <div>
-        <h4>With my team</h4>
-        <p>Wikis, docs, tasks & projects, all in one place.</p>
-      </div>
-      <div>
-        <button>Create Workspace</button>
-      </div>
-    </div>
+    </>
   );
 };
 

@@ -1,26 +1,46 @@
 import React from "react";
+// import {user as React.Component} '../../icons/user.png'
 
-const Usage = () => {
+const plans = [
+  {
+    key: "myself",
+    img: "src/icons/user.png",
+    title: "For myself",
+    description: "Write better. Think more clearly. Stay organized.",
+  },
+  {
+    key: "team",
+    img: "src/icons/users.png",
+    title: "With my team",
+    description: "Wikis, docs, tasks & projects, all in one place.",
+  },
+];
+
+const Usage = ({ formData, handleChange }) => {
   return (
-    <form>
-      <div>
-        <h1>Let's set up a home for your work</h1>
-        <p>You can always create another workspace later.</p>
+    <>
+      <p className="signup-heading">How are you planning to use Eden?</p>
+      <p className="signup-subtitle">
+        We'll streamline your setup experience accordingly
+      </p>
+      <div className="step-wrapper">
+        <div className="plan-wrapper">
+          {plans.map((plan) => (
+            <div
+              key={plan.key}
+              className={`plan ${
+                plan.key === formData.plan ? "selected-plan" : ""
+              }`}
+              onClick={() => handleChange("plan", plan.key)}
+            >
+              <img className="plan-image" src={plan.img} />
+              <p className="plan-title">{plan.title}</p>
+              <p className="plan-subtitle">{plan.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
-      <div>
-        <label>Workspace Name</label>
-        <br />
-        <input placeholder="Eden" />
-      </div>
-      <div>
-        <label>Workspace URL</label>
-        <br />
-        <input placeholder="www.eden.com" />
-      </div>
-      <div>
-        <button>Create Workspace</button>
-      </div>
-    </form>
+    </>
   );
 };
 
