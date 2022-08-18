@@ -21,6 +21,6 @@ h6 {
 .name {
   display: flex;
   flex-direction: column;
-  max-width: 800px;
   padding: 0 auto;
+  text-align: center;
 }
