@@ -29,16 +29,18 @@ const steps = [
   },
 ];
 
+const initialFormData = {
+  userName: "",
+  userDisplayName: "",
+  workspaceName: "",
+  workspaceURL: "",
+  plan: "",
+};
+
 const SignupSteps = () => {
   const [activeStep, setActiveStep] = useState(0);
 
-  const [formData, setFormData] = useState({
-    userName: "",
-    userDisplayName: "",
-    workspaceName: "",
-    workspaceURL: "",
-    plan: "",
-  });
+  const [formData, setFormData] = useState(initialFormData);
 
   const Component = steps[activeStep].component;
 
