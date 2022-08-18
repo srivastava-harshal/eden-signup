@@ -4,13 +4,13 @@ import React from "react";
 const plans = [
   {
     key: "myself",
-    img: "src/icons/user.png",
+    img: "https://res.cloudinary.com/df8r2vbcg/image/upload/v1660843490/eden/Screenshot_2022-08-18_at_8.06.29_PM_mg1nqm.png",
     title: "For myself",
     description: "Write better. Think more clearly. Stay organized.",
   },
   {
     key: "team",
-    img: "src/icons/users.png",
+    img: "https://res.cloudinary.com/df8r2vbcg/image/upload/v1660843490/eden/Screenshot_2022-08-18_at_8.06.51_PM_kinbpi.png",
     title: "With my team",
     description: "Wikis, docs, tasks & projects, all in one place.",
   },

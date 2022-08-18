@@ -64,7 +64,7 @@ const SignupSteps = () => {
   return (
     <div className="wrapper">
       <div className="company-logo">
-        <img src="src/icons/logo.png" />
+        <img src="https://res.cloudinary.com/df8r2vbcg/image/upload/v1660843490/eden/Screenshot_2022-08-18_at_7.11.40_PM_upx9dd.png" />
       </div>
       <Stepper
         steps={steps}
